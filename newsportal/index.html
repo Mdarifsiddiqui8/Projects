@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="data:image/png;base64,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" alt="company logo">
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                <button id="search-button" class="search-button">Search</button>
+            </div>
+        </div>
+    </nav>
+    
+
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+            
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+                <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html> 
