@@ -1,0 +1,264 @@
+/*every single element starts from a clean by removing default spacing (margin/padding).*/ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*It sets the font to Poppins, applies a blue/purple gradient background to the entire page, and uses Flexbox (display: flex) to perfectly center the entire form block in the middle of the screen.*/
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #a77dff, #3f00ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+/*It sets the maximum width of the form to 900 pixels, gives it a white background, and adds a noticeable shadow (box-shadow) to make it look raised off the colorful background.*/
+.container {
+    width: 100%;
+    max-width: 900px; 
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/*Main Header/Footer Styling,It centers the text, sets the text color to white, and applies a distinct color gradient to make these bars stand out at the top and bottom of the form block.*/
+.main-header, .main-footer {
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+}
+
+.main-footer {
+    margin-top: -1px; 
+    border-radius: 0 0 15px 15px;
+    background: linear-gradient(90deg, #ff6b81, #ff9f43); 
+}
+
+/*Applies the subtle light pink gradient that gives the input area its soft, modern look.*/
+.form-container {
+    padding: 0 40px 30px 40px;
+    background: linear-gradient(180deg, #fff0f5, #ffffff); 
+}
+/*This creates the bright pink/purple title bar ("Student Registration Form"). The negative margin is a trick to make the header stretch full width*/
+.form-header {
+    text-align: center;
+    padding: 20px 0;
+    margin: 0 -40px 20px -40px;
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: 700;
+    background: linear-gradient(90deg, #d33a91, #f984ef); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*Form Elements Styling*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/*Uses Flexbox to make sure elements inside (like First Name and Last Name) line up side-by-side with 20 pixels of space (gap) between them.*/
+.form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+/*Makes each input field take up an equal amount of space (flex: 1) within the row and forces the label to stack vertically above the input box.*/
+.input-group, .select-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label, .address-section label, .hobbies-section label, .qualification-section label, .courses-section label, .gender-row label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 0.9em;
+}
+/*Styles all text boxes and dropdowns, giving them slightly rounded corners and a very light gray background for a modern, soft look.*/
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+textarea, 
+select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+}
+/*Active Fields= When a user clicks inside a box, this makes the border turn pink and adds a faint glow so the user knows which field is active.*/
+input:focus, textarea:focus, select:focus {
+    border-color: #d33a91;
+    box-shadow: 0 0 5px rgba(211, 58, 145, 0.5);
+    outline: none;
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/*Specifically tells the Day, Month, and Year dropdowns to each take up exactly one-third of the available row space.*/
+.dob-row .select-group {
+    flex-basis: calc(100% / 3);
+    flex-grow: 1;
+    max-width: calc(100% / 3);
+}
+
+.dob-row > label {
+    flex-basis: 100%;
+    margin-bottom: 5px;
+}
+
+.location-row .input-group {
+    flex-basis: calc(100% / 3);
+}
+
+.country-row .select-group.full-width {
+    flex: 1;
+}
+
+/*Gender, Hobbies, Courses Styling (Radio/Checkbox)*/
+.gender-row {
+    align-items: center;
+}
+.gender-row > label {
+    margin-right: 20px;
+    flex: 0 0 auto; /* Stop label from taking full width */
+}
+/*Uses Flexbox again to line up the options (like Male/Female or Hobbies) side-by-side with consistent spacing.*/
+.radio-group, .checkbox-group {
+    display: flex;
+    gap: 20px;
+}
+.radio-group label, .checkbox-group label {
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 1em;
+}
+.radio-group input[type="radio"], .checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+    width: auto;
+}
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+/*Gives the column titles (like 'Board' or 'Percentage') a light gray background.*/
+.qualification-section {
+    margin-top: 20px;
+}
+.qualification-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+.qualification-table th, .qualification-table td {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.9em;
+}
+.qualification-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: #555;
+}
+.qualification-table td input {
+    border: none;
+    padding: 5px 8px;
+    background-color: transparent;
+    text-align: center;
+    height: 30px;
+    margin: 0;
+}
+.qualification-table tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+.qualification-table td:nth-child(2) {
+    text-align: left;
+    font-weight: 500;
+}
+
+/*Uses Flexbox to push the buttons all the way to the right side of the form.*/
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    color: #ffffff;
+}
+
+.reset-btn {
+    background-color: #ccc;
+    color: #333;
+}
+.reset-btn:hover {
+    background-color: #b0b0b0;
+    transform: translateY(-2px);
+}
+/*Gives the main button a pink gradient background and white text to make it stand out.*/
+.submit-btn {
+    background: linear-gradient(90deg, #d33a91, #f984ef);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/*When the mouse hovers over the Submit button, it changes color slightly and moves up by 2 pixels, giving a nice visual pop/lift.*/
+.submit-btn:hover {
+    background: linear-gradient(90deg, #c23385, #e877e0);
+    transform: translateY(-2px);
+}
+
+/*This block of code only applies when the screen width is 768 pixels or less*/
+@media (max-width: 768px) {
+    .form-container {
+        padding: 0 20px 20px 20px;
+    }
+    .form-header {
+        margin: 0 -20px 20px -20px;
+    }
+    /*The most important change. It tells all the side-by-side rows (like First Name/Last Name) to stack vertically on a small screen so the inputs don't become too squished.*/
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .dob-row .select-group, .location-row .input-group {
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+    .radio-group, .checkbox-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    /*If the table is too wide for the phone screen, this allows the user to scroll horizontally within the table area instead of breaking the whole layout.*/
+    .qualification-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
