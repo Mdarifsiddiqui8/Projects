@@ -1,4 +1,4 @@
-/*every single element starts from a clean by removing default spacing (margin/padding).*/ */
+/*every single element starts from a clean by removing default spacing (margin/padding).*/ 
 * {
     box-sizing: border-box;
     margin: 0;
