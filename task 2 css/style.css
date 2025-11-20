@@ -12,6 +12,7 @@ body {
     font-weight: 900;
     font-style: normal;
     background-color: #f4f7f6; 
+    /*display: flex, justify-content, align-items: This is a magic trio. It grabs the content (your timeline) and forces it to sit perfectly in the dead center of the screen.*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,68 +22,83 @@ body {
 }
 
 .timeline-container {
+    /*Places the four timeline items side-by-side in a row*/
     display: flex;
+    /*Pushes the items apart so there is equal space between them.*/
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
+    /*This is important. It acts as an anchor. It tells the blue line (which we will see next):*/
     position: relative;
     padding-top: -80px;
 }
 
-/* The Horizontal Line */
+/*The Horizontal Line*/
 .timeline-line {
+    /*This takes the line out of the normal flow. It allows you to place it precisely using coordinates.*/
     position: absolute;
-    top: 30px; /* Places the line exactly between the dot and card */
+    /*Moves the line 30 pixels down from the top of the container. This lines it up between the dot and the card.*/
+    top: 30px; 
     left: 0;
     width: 100%;
     height: 4px;
-    /* Gradient from Green (right) to Blue (left) */ 
+    /*Paints the line with colors. It tries to make the line Blue on the left and Green on the right.*/ 
     background: linear-gradient(90deg, #008ACD 70%, #008ACD 25%, #2ecc71 30% );
+    /*Puts the line on the bottom layer so the dots sit on top of it.*/
     z-index: 0;
     border-radius: 4px;
 }
 
 .timeline-item {
     position: relative;
-    flex: 1; /* Makes all items equal width */
+    /* Makes all items equal width */
+    flex: 1; 
     display: flex;
+    /*Inside this specific item, we want things stacked vertically: Dot on top, Card on bottom.*/
     flex-direction: column;
     align-items: center;
+    /*Places this layer above the line (z-index 0).*/
     z-index: 1;
-    padding: 0 15px; /* Gap between cards */
+    /* Gap between cards */
+    padding: 0 15px; 
 }
 
-/* The Dots */
+/*The Dots*/
 .dot {
     width: 18px;
     height: 18px;
+    /*Turns a square box into a perfect circle.*/
     border-radius: 50%;
-    margin-bottom: 40px; /* Creates the gap where the line sits */
-    box-shadow: 0 0 0 5px #f4f7f6; /* Creates a 'fake' gap around the dot if it touches the line */
+    /*Creates the gap where the line sits*/
+    margin-bottom: 40px; 
+    /*Creates a 'fake' gap around the dot if it touches the line*/
+    box-shadow: 0 0 0 5px #f4f7f6; 
 }
 
 .dot-green {
-    background-color: #2ecc71; /* Green */
+    background-color: green;
 }
 
 .dot-blue {
-    background-color: #008ACD; /* Blue */
+    background-color: blue; 
 }
 
-/* The White Cards */
+/*The White Cards*/
 .card {
    background-color: #fff;
     border-radius: 12px;
     padding: 30px 20px;
     text-align: center;
     width: 100%;
-    height: 100%; /* Ensures all cards are same height */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Very soft shadow */
+    /*Ensures all cards are same height*/
+    height: 100%; 
+    /* soft shadow*/
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
     
-    /* Ensure card starts BELOW the line */
+    /*Ensure card starts BELOW the line*/
     margin-top: -22px;
 }
-/* Typography */
+
 .year {
     color: #008ACD;
     font-size: 1.4rem;
@@ -91,7 +107,8 @@ body {
 }
 
 .card p {
-    color: #637381; /* Muted grey text */
+    /*Muted grey text*/
+    color: #637381; 
     font-size: 0.95rem;
     line-height: 1.6;
 }
