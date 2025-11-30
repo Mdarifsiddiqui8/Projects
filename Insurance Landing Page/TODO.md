@@ -1,0 +1,6 @@
+- [x] Replace @keyframes spinDrop with four new keyframes: circularEntry1, circularEntry2, circularEntry3, circularEntry4
+- [x] Remove animation property from .card-img class
+- [x] Add animation property to .img-1 class using circularEntry1
+- [x] Add animation property to .img-2 class using circularEntry2
+- [x] Add animation property to .img-3 class using circularEntry3
+- [x] Add animation property to .img-4 class using circularEntry4
